@@ -26,3 +26,10 @@ services:
     plan: free                      # قاعدة بيانات مجانية بحجم 1GB
     databaseName: telegram_bot
     ipAllowList: []                 # مفتوح للجميع (آمن للتطبيقات الداخلية)
+
+      - type: cron
+    name: keep-awake
+    runtime: python
+    schedule: "*/10 * * * *"  # كل 10 دقائق
+    buildCommand: ""
+    startCommand: python -c "import requests; requests.get('https://your-bot-url.onrender.com/health')"
