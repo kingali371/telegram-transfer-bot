@@ -1,9 +1,26 @@
 
-### 5️⃣ رفع التحديثات لاحقاً
+## 💻 ثالثاً: رفع الملفات إلى GitHub
 
-بعد تعديل الكود:
+### الطريقة 1: عن طريق Git Bash/CMD
 
 ```bash
+# 1. الدخول إلى مجلد المشروع
+cd telegram-transfer-bot
+
+# 2. تهيئة Git
+git init
+
+# 3. إضافة جميع الملفات (لن يضيف الملفات الموجودة في .gitignore)
 git add .
-git commit -m "وصف التعديل"
-git push
+
+# 4. التأكد من الملفات المضافة
+git status
+
+# 5. عمل commit
+git commit -m "الإصدار الأول: بوت نقل أعضاء تيليجرام"
+
+# 6. ربط المستودع المحلي بالبعيد (عوّض باسم المستخدم والمستودع)
+git remote add origin https://github.com/YOUR_USERNAME/REPO_NAME.git
+
+# 7. رفع الملفات
+git push -u origin main
