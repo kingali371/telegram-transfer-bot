@@ -1,4 +1,11 @@
+# الأساسيات
 telethon>=1.34.0
 python-dotenv>=1.0.0
-asyncio>=3.4.3
+
+# قاعدة البيانات
+asyncpg>=0.29.0        # للتعامل مع PostgreSQL بشكل غير متزامن
+psycopg2-binary>=2.9.0 # بديل متزامن
+
+# أدوات إضافية
 colorama>=0.4.6
+aiofiles>=23.2.0
