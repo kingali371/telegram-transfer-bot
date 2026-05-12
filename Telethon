@@ -1,0 +1,16 @@
+from telethon.tl.functions.channels import InviteToChannelRequest
+import random, asyncio
+
+async def transfer_members():
+    users = client.iter_participants(source_group, aggressive=True)
+    members_to_invite = []
+    
+    async for user in users:
+        members_to_invite.append(user.id)
+    
+    for user_id in members_to_invite:
+        try:
+            await client(InviteToChannelRequest(destination_group, [user_id]))
+            await asyncio.sleep(random.uniform(10, 30))  # تجنب الحظر
+        except FloodWaitError as e:
+            await asyncio.sleep(e.seconds)
