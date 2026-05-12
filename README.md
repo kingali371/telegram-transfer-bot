@@ -32,3 +32,8 @@ cp .env.example .env
 
 # تعديل ملف .env بالبيانات الخاصة بك
 nano .env
+
+![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Telegram](https://img.shields.io/badge/telegram-bot-blue.svg)
+
