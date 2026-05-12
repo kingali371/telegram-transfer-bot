@@ -1,0 +1,28 @@
+services:
+  # خدمة البوت الرئيسية
+  - type: worker                    # نوع الخدمة worker للبوتات
+    name: telegram-transfer-bot
+    runtime: python                 # لغة البرمجة
+    plan: free                      # الخطة المجانية
+    buildCommand: pip install -r requirements.txt   # أمر تثبيت المكتبات
+    startCommand: python main.py    # أمر تشغيل البوت
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: API_ID
+        sync: false                 # سيتم إدخالها يدوياً
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: telegram-bot-db     # ربط بقاعدة البيانات
+          property: connectionString
+
+  # قاعدة بيانات PostgreSQL
+  - type: postgresql
+    name: telegram-bot-db
+    plan: free                      # قاعدة بيانات مجانية بحجم 1GB
+    databaseName: telegram_bot
+    ipAllowList: []                 # مفتوح للجميع (آمن للتطبيقات الداخلية)
