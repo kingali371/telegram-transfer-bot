@@ -1,24 +1,34 @@
-# بوت نقل أعضاء تيليجرام
+# 🤖 Telegram Member Transfer Bot
 
-أداة لنقل الأعضاء بين مجموعات تيليجرام مع دعم حسابات متعددة وتجنب الحظر.
+بوت لنقل أعضاء تيليجرام بين المجموعات مع دعم حسابات متعددة وتجنب الحظر.
 
-## ✨ المميزات
+## ✨ الميزات
 
-- دعم عدة حسابات (round-robin) لزيادة السرعة
-- تصفية المستخدمين النشطين فقط
-- حد يومي لكل حساب (50-200 دعوة)
-- معالجة تلقائية لأخطاء FloodWaitError
-- واجهة أزرار مضمنة (إن وجدت)
+- ✅ دعم عدة حسابات (Round-robin)
+- ✅ معالجة تلقائية لأخطاء FloodWaitError
+- ✅ حد يومي لكل حساب
+- ✅ تصفية المستخدمين غير النشطين
+- ✅ واجهة سطر أوامر ملونة
 
-## 🛠 المتطلبات
+## ⚠️ ملاحظات هامة
 
-- Python 3.7+
-- Telethon
-- حساب تيليجرام مع api_id و api_hash من [my.telegram.org](https://my.telegram.org)
+| الخاصية | الحالة |
+|---------|--------|
+| نقل الأعضاء الظاهرين | ✅ ممكن |
+| نقل الأعضاء المخفيين | ❌ غير ممكن |
 
 ## 📥 التثبيت
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
-cd REPO-NAME
+# استنساخ المشروع
+git clone https://github.com/username/telegram-transfer-bot.git
+cd telegram-transfer-bot
+
+# تثبيت المكتبات
 pip install -r requirements.txt
+
+# نسخ ملف البيئة
+cp .env.example .env
+
+# تعديل ملف .env بالبيانات الخاصة بك
+nano .env
